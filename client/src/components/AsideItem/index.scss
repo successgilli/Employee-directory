@@ -1,0 +1,24 @@
+.asideItem{
+    color: gray;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    font-size: 13px;
+    justify-content: left;
+    align-items: center;
+    padding-left: 15px;
+    box-sizing: border-box;
+    &_icon{
+        width: 20px;
+        height: 20px;
+    }
+
+    &:hover{
+        color: rgb(65, 184, 65);
+        cursor: pointer;
+    }
+}
+
+.material-icons{
+    padding-right: 5px;
+}

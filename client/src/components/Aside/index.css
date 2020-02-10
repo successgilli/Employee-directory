@@ -1,0 +1,21 @@
+.aside {
+  background-color: #2b2727;
+  position: fixed;
+  left: 0;
+  width: 16%;
+  height: 100%;
+}
+.aside_title {
+  color: #41b841;
+  font-weight: 900;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+  margin-bottom: 20px;
+  background-color: #6b6868;
+}
+.aside_title > p {
+  margin: 0;
+}
