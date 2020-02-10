@@ -1,0 +1,22 @@
+
+.aside{
+    background-color: rgb(43, 39, 39);
+    position: fixed;
+    left: 0;
+    width: 16%;
+    height: 100%;
+    &_title{
+        color: rgb(65, 184, 65);
+        font-weight: 900;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 45px;
+        margin-bottom: 20px;
+        background-color: rgb(107, 104, 104);
+    }
+    &_title > p{
+        margin: 0;
+    }
+}
