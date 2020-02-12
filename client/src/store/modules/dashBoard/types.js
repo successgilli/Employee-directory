@@ -1,0 +1,8 @@
+const SELECT_PAGE = 'SELECT_PAGE';
+const TOGGLE_PAGE = 'TOGGLE_PAGE';
+
+
+export {
+  SELECT_PAGE,
+  TOGGLE_PAGE,
+};

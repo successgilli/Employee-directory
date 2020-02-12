@@ -1,0 +1,17 @@
+.button {
+  margin-left: 10px;
+  color: white;
+  min-width: 134px;
+  max-width: 160px;
+  transition: 0.5s ease;
+}
+.button_light {
+  background-color: #0fc8a6;
+}
+.button_dark {
+  background-color: #0c725f;
+}
+.button:hover {
+  box-shadow: 0px 37px 20px -20px rgba(102, 175, 233, 0.6);
+  transform: translate(0px, -3px) scale(1);
+}

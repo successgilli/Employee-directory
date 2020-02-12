@@ -1,11 +1,18 @@
 .dashboard{
     width: 84%;
     margin-left: 16%;
-    min-height: 550px;
-    background-color: red;
-    &_main{
-        background-color: orange;
+    height: 100%;
+    transition: 0.8s ease;
+    background-color: rgb(245, 245, 245);
+    &_head1{
+        background-color: white;
+        border-bottom: 1px solid rgb(209, 207, 207);
         width: 100%;
-        height: 100%;
+        height: 45px;
+        box-sizing: border-box;
+        padding-left: 10px;
+        padding-right: 10px;
+        display: flex;
+
     }
 }
