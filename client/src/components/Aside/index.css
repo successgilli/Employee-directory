@@ -1,9 +1,10 @@
 .aside {
   background-color: #2b2727;
   position: fixed;
-  left: 0;
+  left: 0%;
   width: 16%;
   height: 100%;
+  transition: 0.8s ease;
 }
 .aside_title {
   color: #41b841;

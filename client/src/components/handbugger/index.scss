@@ -1,0 +1,10 @@
+.handbugger{
+    color: rgb(172, 163, 163);
+    cursor: pointer;
+    &_button{
+        border: 0;
+        outline: 0;
+        background-color: transparent;
+        transition: 0.8s ease;
+    }
+}

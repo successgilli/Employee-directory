@@ -8,6 +8,9 @@
   align-items: center;
   padding-left: 15px;
   box-sizing: border-box;
+  outline: 0;
+  background-color: transparent;
+  border: 0;
 }
 .asideItem_icon {
   width: 20px;

@@ -1,39 +1,30 @@
-// third-party libraries
-import { takeLatest } from 'redux-saga/effects';
-// import API from './requests';
+import { takeLatest, put } from 'redux-saga/effects';
 
-// types
-import {
-  SELECT_PAGE,
-  TOGGLE_PAGE,
-} from './types';
+import { TOGGLE_ASIDE, SET_ASIDE } from './types';
 
-// actions
-// export const requestLogin = (payload) => ({ type: USER_LOGIN, payload });
-// export const closeToast = () => ({ type: CLOSE_TOAST });
+export const toggleAsideBar = (payload) => ({ type: SET_ASIDE, payload });
+const changeAsideState = (payload) => {
+  return { type: TOGGLE_ASIDE, payload };
+};
 
-// const responseMeassage = (payload) => ({ type: USER_MESSAGE, payload });
-// const requestReturned = () => ({ type: REQUEST_RETURNED });
-// const insertUser = (payload) => ({ type: LOGIN_USER, payload });
-
-// eslint-disable-next-line require-yield
-export function* asideWorker(action) {
-  console.log(action);
+function* setAsideState(action) {
+  yield put(changeAsideState(action.payload));
 }
 
-export function* watchAsideRequests() {
-  yield takeLatest(TOGGLE_PAGE, asideWorker);
+export function* watchAsideRequest() {
+  yield takeLatest(SET_ASIDE, setAsideState);
 }
 
 const initialState = {
-  page: 'Dashboard',
+  open: true,
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case SELECT_PAGE:
+    case TOGGLE_ASIDE:
       return {
         ...initialState,
+        open: action.payload,
       };
     default:
       return state;
