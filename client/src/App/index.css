@@ -8,3 +8,6 @@ html {
 button {
   outline: 0 !important;
 }
+.material-icons {
+  padding-right: 0px;
+}

@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Button from '../Button';
 import DropDown from '../DropDown';
 import Input from '../Input';
+import EmployeeTable from '../EmployeeTable';
 
 import './index.scss';
 
@@ -11,7 +12,7 @@ const Employee = () => {
     'IT', 'Product', 'Data science', 'Wider Team', 'Accounting', 'Hr',
   ]);
   const [type] = useState([
-    'Full Time', 'Part Time', 'Contract',
+    'Full Time', 'Intern', 'Contract',
   ]);
   const [inputVal, setInputVal] = useState('');
 
@@ -31,7 +32,10 @@ const Employee = () => {
       </div>
       <div className="form-inline employee_selectDropDiv col-sm-10 employee_div">
         <DropDown options={departments} defaultOption="Department" changeEvent={handleDepartmentFilter} />
-        <DropDown options={type} defaultOption="Type" changeEvent={handleTypeFilter} />
+        <DropDown options={type} defaultOption="Employee Type" changeEvent={handleTypeFilter} />
+      </div>
+      <div className="form-inline table-responsive-sm employee_selectDropDiv col-sm-10 employee_div employee_table">
+        <EmployeeTable />
       </div>
     </div>
   );

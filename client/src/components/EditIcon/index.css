@@ -1,0 +1,15 @@
+.editIcon {
+  color: #518d51;
+  font-size: 20px;
+  box-sizing: border-box;
+  padding-right: 0px;
+}
+.editIcon_btn {
+  outline: 0;
+  background-color: transparent;
+  border: 0;
+  box-sizing: border-box;
+}
+.editIcon:hover {
+  color: #28f328;
+}
