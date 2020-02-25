@@ -1,5 +1,5 @@
 .button{
-    margin-left: 10px;
+    margin-right: 10px;
     color: white;
     min-width: 134px;
     max-width: 160px;
@@ -10,6 +10,9 @@
     }
     &_dark{
         background-color: rgb(12, 114, 95);
+    }
+    &_green{
+        background-color: green;
     }
     &:hover{
         box-shadow: 0px 37px 20px -20px rgba(102,175,233,.6);

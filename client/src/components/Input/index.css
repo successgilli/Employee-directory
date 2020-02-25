@@ -1,3 +1,17 @@
 .input {
-  max-width: 600px;
+  padding: 0;
+  z-index: 400;
+}
+.input_input {
+  width: 100% !important;
+}
+.input_label {
+  justify-content: flex-start !important;
+  font-weight: bold;
+}
+.input_invincible {
+  z-index: 100;
+  position: relative;
+  opacity: 0;
+  cursor: pointer !important;
 }

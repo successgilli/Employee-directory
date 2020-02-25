@@ -8,6 +8,7 @@ const DashboardNav = ({ dashboard: { page } }) => {
   const icon = {
     Dashboard: 'home',
     Employee: 'people',
+    'Edit Employee': 'people',
   };
 
   return (

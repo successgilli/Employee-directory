@@ -17,21 +17,17 @@ const EmployeeTable = ({ fetchEmployees: getEmployees, employeeTable: { users } 
     setEmployees(users);
   }, [users]);
 
-  const employeeItems = employees.map(({
-    name,
-    email,
-    employmentType,
-    department,
-  },
-  index) => (
-    <EmployeeTableItem
-      key={email}
-      name={name}
-      employeeType={employmentType}
-      department={department}
-      index={index}
-      email={email}
-    />
+  const employeeItems = employees.map((employee,
+    index) => (
+      <EmployeeTableItem
+        key={employee.email}
+        name={employee.name}
+        employeeType={employee.employmentType}
+        department={employee.department}
+        index={index}
+        email={employee.email}
+        employee={employee}
+      />
   ));
 
   return (

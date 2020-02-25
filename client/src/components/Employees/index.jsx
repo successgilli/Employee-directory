@@ -25,16 +25,23 @@ const Employee = () => {
 
   return (
     <div className="employee">
-      <div className="form-inline col-sm-10 employee_div employee_div1">
-        <Input type="text" placeholder="Search An Employee" changeEvent={handleInputChange} />
+      <div className="form-inline employee_div employee_div1">
+        <Input
+          type="text"
+          placeholder="Search An Employee"
+          name="searchEmployee"
+          changeEvent={handleInputChange}
+          bootStrapWidth="col-sm-7"
+        />
         <Button text="Search" colorClass="light" clickEvent={onClickSearch} />
         <Button text="Add Employee" colorClass="dark" clickEvent={onClickAdd} />
       </div>
-      <div className="form-inline employee_selectDropDiv col-sm-10 employee_div">
-        <DropDown options={departments} defaultOption="Department" changeEvent={handleDepartmentFilter} />
-        <DropDown options={type} defaultOption="Employee Type" changeEvent={handleTypeFilter} />
+
+      <div className="form-row employee_selectDropDiv employee_div">
+        <DropDown options={departments} defaultOption="Department" changeEvent={handleDepartmentFilter} bootStrapWidth="col-sm-3" classname="selectDropDown_custom1" />
+        <DropDown options={type} defaultOption="Employee Type" changeEvent={handleTypeFilter} bootStrapWidth="col-sm-3" classname="selectDropDown_custom1" />
       </div>
-      <div className="form-inline table-responsive-sm employee_selectDropDiv col-sm-10 employee_div employee_table">
+      <div className="form-inline table-responsive-sm col-sm-10 employee_selectDropDiv employee_div employee_table">
         <EmployeeTable />
       </div>
     </div>

@@ -6,7 +6,8 @@ import Aside from '../../components/Aside';
 import Handbugger from '../../components/handbugger';
 import DashboardNav from '../../components/DashboardNav';
 import Employees from '../../components/Employees';
-import DashboardHome from '../../components/DashboardHome';
+// import DashboardHome from '../../components/DashboardHome';
+import EmployeeForm from '../../components/EmployeeForm';
 
 
 import './index.scss';
@@ -17,8 +18,9 @@ const Dashboard = ({ aside: { open }, dashboard: { page } }) => {
     marginLeft: open ? '16%' : '0%',
   };
   const renderDashboardPage = {
-    Dashboard: <DashboardHome />,
+    Dashboard: <EmployeeForm />,
     Employee: <Employees />,
+    'Edit Employee': <EmployeeForm />,
   };
 
   return (

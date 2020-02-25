@@ -12,6 +12,7 @@ const EmployeeTable = ({
   email,
   employeeType,
   department,
+  employee,
 }) => (
   <tr className="employeeTableItem">
     <th scope="row">{index + 1}</th>
@@ -20,7 +21,7 @@ const EmployeeTable = ({
     <td>{employeeType}</td>
     <td>{department}</td>
     <td>
-      <EditIcon />
+      <EditIcon employee={employee} />
       <DeleteIcon />
     </td>
   </tr>
@@ -32,6 +33,7 @@ EmployeeTable.propTypes = {
   employeeType: PropTypes.string.isRequired,
   department: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
+  employee: PropTypes.shape({}).isRequired,
 };
 
 export default EmployeeTable;
