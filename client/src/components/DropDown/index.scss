@@ -1,15 +1,22 @@
 .selectDropDown{
-    border-top: 0;
-    border-left: 0;
-    border-right: 0;
     font-weight: bold;
     background-color: transparent;
-    border-radius: 0;
-    margin-right: 40px;
-    min-width: 200px;
-    max-width: 300px;
+    // min-width: 200px;
     outline: 0 !important;
+    
     cursor: pointer;
+    &_select{
+
+        cursor: pointer;
+    }
+    &_custom1{
+        background-color: transparent;
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+        border-radius: 0;
+        outline: 0;
+    }
 }
 
 .form-control:focus {

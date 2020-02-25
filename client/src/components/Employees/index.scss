@@ -1,5 +1,6 @@
 .employee{
     min-height: 550px;
+    height: 100%;
     box-sizing: border-box;
     padding: 30px;
     &_div{
@@ -11,9 +12,15 @@
         justify-content: space-between;
     }
     &_selectDropDiv{
-        margin-top: 20px;
+        margin-top: 40px !important;
+        padding-left: 0px;
+        padding-right: 0px;
     }
     &_table{
         margin-top: 60px;
+    }
+    &_btns{
+        justify-content: space-around;
+        padding: 0;
     }
 }

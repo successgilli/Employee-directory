@@ -1,15 +1,19 @@
 .selectDropDown {
+  font-weight: bold;
+  background-color: transparent;
+  outline: 0 !important;
+  cursor: pointer;
+}
+.selectDropDown_select {
+  cursor: pointer;
+}
+.selectDropDown_custom1 {
+  background-color: transparent;
   border-top: 0;
   border-left: 0;
   border-right: 0;
-  font-weight: bold;
-  background-color: transparent;
   border-radius: 0;
-  margin-right: 40px;
-  min-width: 200px;
-  max-width: 300px;
-  outline: 0 !important;
-  cursor: pointer;
+  outline: 0;
 }
 .form-control:focus {
   border-color: #66afe9;

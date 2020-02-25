@@ -1,0 +1,26 @@
+.employeeForm {
+  min-height: 80vh;
+  box-sizing: border-box;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.employeeForm_avartardiv {
+  flex-basis: 20%;
+}
+.employeeForm_formdiv {
+  flex-basis: 75%;
+  padding: 10px;
+}
+.employeeForm_vicible {
+  opacity: 1;
+  height: 60%;
+  transition: 0.2s ease;
+}
+.employeeForm_invicible {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  background-color: red;
+  transition: 0.2s ease;
+}

@@ -1,5 +1,6 @@
 .employee {
   min-height: 550px;
+  height: 100%;
   box-sizing: border-box;
   padding: 30px;
 }
@@ -12,8 +13,14 @@
   justify-content: space-between;
 }
 .employee_selectDropDiv {
-  margin-top: 20px;
+  margin-top: 40px !important;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 .employee_table {
   margin-top: 60px;
+}
+.employee_btns {
+  justify-content: space-around;
+  padding: 0;
 }
