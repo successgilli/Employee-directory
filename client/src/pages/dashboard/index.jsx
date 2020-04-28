@@ -9,7 +9,6 @@ import Employees from '../../components/Employees';
 // import DashboardHome from '../../components/DashboardHome';
 import EmployeeForm from '../../components/EmployeeForm';
 
-
 import './index.scss';
 
 const Dashboard = ({ aside: { open }, dashboard: { page } }) => {
