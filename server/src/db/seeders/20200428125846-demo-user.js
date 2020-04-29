@@ -1,13 +1,19 @@
+
+import "regenerator-runtime/runtime.js";
 'use strict';
 
+
 import { v1 as uuidv1 } from 'uuid';
+
+import passwordHash from '../../helpers/bcrypt';
+
+const { hash } = passwordHash;
 
 const user =   {
   id: uuidv1(),
   firstName: 'Gilbert',
   lastName: 'Eli',
   employeeID: 1,
-  password: 'fdefgretg5ew b',
   offerLetter: 'file Path',
   displayPicture: 'Profile pic',
   dateOfBirth: '02-Jan-1890',
@@ -39,7 +45,7 @@ const user =   {
 
 
 module.exports = {
-  up: (queryInterface, Sequelize) => {
+  up: async (queryInterface, Sequelize) => {
     /*
       Add altering commands here.
       Return a promise to correctly handle asynchronicity.
@@ -50,6 +56,8 @@ module.exports = {
         isBetaMember: false
       }], {});
     */
+    user.password = await hash('admin@123#');
+
     return queryInterface.bulkInsert('Users', [ user ], {});
   },
 
