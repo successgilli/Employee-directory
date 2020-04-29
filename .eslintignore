@@ -2,3 +2,4 @@ config
 migrations
 models
 seeders
+dist

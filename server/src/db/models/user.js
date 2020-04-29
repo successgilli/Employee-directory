@@ -1,4 +1,10 @@
+import jwt from 'jsonwebtoken';
+import passwordHash from '../../helpers/bcrypt';
+
+const { compare } = passwordHash;
+
 'use strict';
+
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define('User', {
     id: {
@@ -70,7 +76,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     salary: {
       allowNull: false,
-      type: DataTypes.FLOAT(2,6)
+      type: DataTypes.FLOAT(2, 6)
     },
     allocatedLeaveDays: {
       allowNull: false,
@@ -139,8 +145,29 @@ module.exports = (sequelize, DataTypes) => {
       defaultValue: DataTypes.NOW
     }
   }, {});
-  User.associate = function(models) {
+  User.associate = function (models) {
     // associations can be defined here
   };
+
+  User.getUserByEmail = async (email) => {
+    const response = await User.findAll({
+      where: { email }
+    });
+
+    return response;
+  };
+
+  User.prototype.authenticate = async function(plainPassword) {
+    let token = null;
+    const { password, id } = this;
+    const truthy = await compare(plainPassword, password);
+
+    if(truthy) {
+      token = jwt.sign({userId : id }, 'secretekey', { expiresIn: '2w' });
+    }
+
+    return token;
+  }
+
   return User;
 };
