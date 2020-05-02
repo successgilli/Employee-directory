@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css?family=Cabin|Russo+One&display=swap');
+
+body{
+    background-color: #002428;
+    color: #f9ffff;
+    
+}
+.home{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+
+    &_content{
+        box-sizing: border-box;
+        width: 100%;
+        display: flex;
+        max-width: 125rem;
+
+        @media(max-width: 600px){
+            &{
+                flex-direction: column;
+            }
+        }
+    }
+
+    &_left{
+        border-right: 0.094rem solid #7c9296;
+        display: flex;
+        align-items: center;
+        font-family: 'Cabin', sans-serif;
+        flex: 1;
+        font-size: 2rem;
+        padding-left: 5%;
+        padding-right: 5%;
+
+        @media(max-width: 600px){
+            &{
+                position: fixed;
+                top: 1rem;
+                border-right: 0;
+            }
+        }
+    }
+    &_right{
+        flex: 1;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    &_logo{
+        height: 5rem;
+        width: 5rem;
+        margin-right: 2rem;
+        object-fit: contain;
+    }
+    &_leftcontent{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media(max-height: 600px){
+    html{
+        font-size: 12px;
+    }
+}
+
+@media(max-width: 846px){
+    html{
+        font-size: 10px;
+    }
+}
+

@@ -1,0 +1,39 @@
+.LoginForm{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    
+    &_head, &_title{
+        font-family: 'Cabin', sans-serif;
+        text-align: center;
+    }
+    &_head{
+        margin-bottom: 1rem;
+    }
+    &_title{
+        text-transform: uppercase;
+        letter-spacing: 0.09rem;
+        
+    }
+    &_inputs{
+        padding: 5rem;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+
+    }
+    &_submit{
+        margin-bottom: 2rem;
+    }
+    &_submit, &_forgot{
+        text-align: center;
+    }
+}
+
+a{
+    text-decoration: none;
+    color: #faffff;
+    font-family: 'Cabin', sans-serif;
+    text-align: center;
+    font-size: 0.9rem;
+    letter-spacing: 0.09rem;
+}

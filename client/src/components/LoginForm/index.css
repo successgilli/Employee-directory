@@ -1,0 +1,37 @@
+.LoginForm {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+.LoginForm_head,
+.LoginForm_title {
+  font-family: "Cabin", sans-serif;
+  text-align: center;
+}
+.LoginForm_head {
+  margin-bottom: 1rem;
+}
+.LoginForm_title {
+  text-transform: uppercase;
+  letter-spacing: 0.09rem;
+}
+.LoginForm_inputs {
+  padding: 5rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+.LoginForm_submit {
+  margin-bottom: 2rem;
+}
+.LoginForm_submit,
+.LoginForm_forgot {
+  text-align: center;
+}
+a {
+  text-decoration: none;
+  color: #faffff;
+  font-family: "Cabin", sans-serif;
+  text-align: center;
+  font-size: 0.9rem;
+  letter-spacing: 0.09rem;
+}

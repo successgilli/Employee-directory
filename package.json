@@ -13,7 +13,8 @@
     "db:init": "cd ./server/src && npx sequelize-cli init && cd ..../",
     "db:migrate": "npx sequelize-cli db:migrate",
     "db:undo": "npx sequelize-cli db:migrate:undo:all",
-    "db:seed": "npx sequelize-cli db:seed:all"
+    "db:seed": "npx sequelize-cli db:seed:all",
+    "deploy": "npm run start:client && gh-pages -d ./client/public"
   },
   "repository": {
     "type": "git",
@@ -44,6 +45,7 @@
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^2.5.1",
     "file-loader": "^5.0.2",
+    "gh-pages": "^2.2.0",
     "node-sass": "^4.13.1",
     "nodemon": "^2.0.3",
     "redux-devtools-extension": "^2.13.8",
