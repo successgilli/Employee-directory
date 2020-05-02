@@ -1,6 +1,8 @@
 import express from 'express';
 import { config } from 'dotenv';
 import debug from 'debug';
+import path from 'path';
+import cors from 'cors';
 
 import routes from './routes';
 
@@ -10,16 +12,16 @@ const debugInstance = debug('http');
 const app = express();
 const PORT = process.env.PORT || 8080;
 
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use('/api/v1', routes);
 
+app.use(express.static(path.join(__dirname, '../../client/public')));
+
 app.use('*', (req, res) => {
-  res.status(404).json({
-    status: 400,
-    message: 'route not found',
-  });
+  res.sendFile(path.join(__dirname, '../../client/public/index.html'));
 });
 
 // eslint-disable-next-line no-unused-vars
