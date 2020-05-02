@@ -1,12 +1,34 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import Proptypes from 'proptypes';
+import { initiateLogin } from '../../store/modules/login';
 
 import Input from '../Input';
 import Button from '../Button';
 
 import './index.scss';
+import validateLogin from '../../util/validateLogin';
 
-const LoginForm = () => {
+
+const { validate } = validateLogin;
+
+const LoginForm = ({
+  initiateLogin: loginUser,
+  loginState: { pending },
+}) => {
+  const [inputObj, setInput] = useState({ email: '', password: '' });
+  const [validCheck, setValid] = useState({ email: '', password: '' });
+  const [buttonActive, setButtonActive] = useState(true);
+
+  useEffect(() => {
+    const validClasses = Object.values(validCheck);
+    const valid = (validClasses.includes('is-invalid')
+    || validClasses.includes(''));
+
+    setButtonActive(valid);
+  }, [validCheck]);
+
   const inputHeight = {
     height: '3rem',
     fontWeight: 'bold',
@@ -19,6 +41,21 @@ const LoginForm = () => {
     height: '3rem',
   };
 
+  const handleBtnClick = () => loginUser(inputObj);
+  const handleChange = (e) => {
+    const { target: { name, value } } = e;
+    const valid = validate(name, value);
+
+    setInput({
+      ...inputObj,
+      [name]: value,
+    });
+    setValid({
+      ...validCheck,
+      [name]: (valid) ? 'is-valid' : 'is-invalid',
+    });
+  };
+
   return (
     <div className="LoginForm">
       <div>
@@ -26,11 +63,33 @@ const LoginForm = () => {
         <p className="LoginForm_title">Please Login to admin Dashboard</p>
       </div>
       <div className="LoginForm_inputs">
-        <Input type="email" placeholder="Email" name="email" inputStyle={inputHeight} />
-        <Input type="password" placeholder="Password" inputStyle={inputHeight} name="password" />
+        <Input
+          type="email"
+          placeholder="Email"
+          name="email"
+          inputStyle={inputHeight}
+          changeEvent={handleChange}
+          valid={validCheck.email}
+          invalidMessage="invalid email"
+        />
+        <Input
+          type="password"
+          placeholder="Password"
+          inputStyle={inputHeight}
+          name="password"
+          changeEvent={handleChange}
+          valid={validCheck.password}
+          invalidMessage="invalid password"
+        />
       </div>
       <div className="LoginForm_submit">
-        <Button buttonStyle={buttonStyle} text="LOGIN" />
+        <Button
+          buttonStyle={buttonStyle}
+          text="LOGIN"
+          clickEvent={handleBtnClick}
+          disabled={buttonActive || pending}
+          loading={pending}
+        />
       </div>
       <div className="LoginForm_forgot">
         <Link to="/armpit">FORGOTTEN YOUR PASSWORD?</Link>
@@ -39,4 +98,13 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+const mapStateToProps = (state) => ({ loginState: state.login });
+
+LoginForm.propTypes = {
+  initiateLogin: Proptypes.func.isRequired,
+  loginState: Proptypes.shape({
+    pending: Proptypes.bool.isRequired,
+  }).isRequired,
+};
+
+export default connect(mapStateToProps, { initiateLogin })(LoginForm);

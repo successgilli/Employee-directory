@@ -9,6 +9,7 @@ const Button = ({
   colorClass,
   disabled,
   buttonStyle,
+  loading,
 }) => {
   const classname = `col-sm-2 btn button button_${colorClass}`;
 
@@ -20,7 +21,9 @@ const Button = ({
       onClick={clickEvent}
       style={{ ...buttonStyle }}
     >
-      {text}
+      { !loading && text}
+      { loading && <span className="spinner-grow spinner-grow-sm" role="status" aria-hidden="true" />}
+      { loading && 'Loading...'}
     </button>
   );
 };
@@ -31,11 +34,13 @@ Button.propTypes = {
   colorClass: PropTypes.string.isRequired,
   disabled: PropTypes.bool,
   buttonStyle: PropTypes.shape({}),
+  loading: PropTypes.bool,
 };
 
 Button.defaultProps = {
   disabled: false,
   buttonStyle: {},
+  loading: false,
 };
 
 export default Button;
